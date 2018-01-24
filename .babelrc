@@ -1,0 +1,56 @@
+{
+  "env": {
+    "production": {
+      "presets": [
+        ["minify", {"mangle": false}],
+        "react",
+        ["env", {
+          "targets": {
+            "browsers": ["last 2 versions", "ie >= 11"]
+          }
+        }]
+      ],
+      "plugins": [
+        ["lodash", {"id": ["recompose", "polished"]}],
+        "transform-runtime",
+        "transform-object-rest-spread",
+        "transform-class-properties",
+        ["transform-react-remove-prop-types", {"mode": "wrap"}]
+      ]
+    },
+    "development": {
+      "presets": [
+        "react",
+        ["env", {
+          "targets": {
+            "browsers": ["last 2 versions", "ie >= 11"]
+          }
+        }]
+      ],
+      "plugins": [
+        ["lodash", {"id": ["recompose", "polished"]}],
+        "transform-runtime",
+        "transform-object-rest-spread",
+        "transform-class-properties",
+        ["transform-react-remove-prop-types", {"mode": "wrap"}],
+      ]
+    },
+    "test": {
+      "presets": [
+        "react",
+        ["env", {
+          "targets": {
+            "browsers": ["last 2 versions", "ie >= 11"]
+          },
+        }]
+      ],
+      "plugins": [
+        ["lodash", {"id": ["recompose", "polished"]}],
+        "transform-runtime",
+        "transform-object-rest-spread",
+        "transform-class-properties",
+        ["transform-react-remove-prop-types", {"mode": "wrap"}]
+      ]
+    }
+  }
+}
